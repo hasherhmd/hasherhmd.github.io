@@ -96,7 +96,13 @@ border-color: #CDB27B;;
   background: #CDB27B;
 }
 
-
+form p {
+      text-align: left;
+      position: absolute;
+      bottom: -10px;
+      font-size: 12px;
+      color: red;
+}
 
 
 
