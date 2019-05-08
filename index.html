@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <title>The Colony</title>
-    <meta name="description" content="Description">
+    <title>24 Mayfair</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -14,48 +13,49 @@
 
     <link rel="icon" type="image/png" href="favicon.ico">
 
+    <script type="text/javascript" src="https://lib.formfor.site/1.0/ffs-valid.min.js" />
+
   </head>
   <body>
     <!-- BEGIN PAGE -->
-    <video autoplay muted loop id="video">
-      <source src="img/video1.mp4" type="video/mp4">
-    </video>
 
-    <div class="colony">
-      <img src="img/colony.png" class="logo" />
-      <div class="cfm cfm-1">Click for more</div>
-    </div>
-
-    <div class="tf">
-      <img src="img/24.png" class="logo" />
-      <div class="cfm cfm-2">Click for more</div>
-    </div>
-
-    <img src="img/sr-logo.png" class="srlogos" />
-
-    <div class="middle"></div>
-
-    <div class="half left-half"></div>
-    <div class="half right-half"></div>
-
-    <div class="popup pu1">    
-      <div class="close">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l6 offset-l3">
+          <img src="img/24.png" class="logo" />
+          <br>
+          <h1>Register your interest</h1>
+        </div>
       </div>
-      <h1>24 at Colony Club</h1>
-      <p> Luxury and elegance are most definitely on the menu for our new cosmopolitan restaurant. Offering an even more opulent dining experience, its décor has been carefully chosen to combine bold and striking design features to create a stunning statement of class and style. Bronzes, coppers, golds and vibrant blues come together to create a setting that effortlessly creates a luxurious atmosphere of sophistication.
-        <br><br>
-Unwrapped: July 2019.</p>
-    </div>
 
-    <div class="popup pu2">    
-      <div class="close">
+      <div class="row">
+        
+       <form class="col s12 l6 offset-l3" method="POST" action="https://formfor.site/send/FgbiARj1B7Aya9miGUeLNL2BiV1xxZ" onsubmit="return ffs.checkValid(this, 'your-key', 'Thanks. We will contact you soon.');">
+         <div class="row">
+           <div class="input-field col m6 s12">
+             <input id="first_name" type="text" name="first_name" valid-required valid-msg-required="Please fill in your first name">
+             <label for="first_name">First Name</label>
+           </div>
+           <div class="input-field col m6 s12">
+             <input id="last_name" type="text" name="last_name" valid-required valid-msg-required="Please fill in your last name">
+             <label for="last_name">Last Name</label>
+           </div>
+         </div>
+         <div class="row">
+           <div class="input-field col s12">
+             <input id="email" type="email" name="email" valid-email valid-msg-required="Please fill in your e-mail">
+             <label for="email">Email</label>
+           </div>
+         </div>
+
+         <div class="row">
+           <div class="input-field col s12">
+             <input id="submit" type="submit" class="validate" value="Register Interest">
+           </div>
+         </div>
+       </form>
+
       </div>
-      <h1>The Colony Club</h1>
-      <p> Prepare for gaming at its most dramatic and indulgent as you enjoy all your favourite games in a setting that whispers style and shouts elegance. Our new gaming area will boast walls and columns featuring sumptuous coverings of hand chosen fabric rich in colour and warm in texture that create a truly opulent feel. This will be framed by the sheer undiluted splendour of polished marble flooring and luxurious carpets. With every last detail considered, our new gaming area will make the Colony Club a setting like no other.
-        <br><br>
-Unwrapped: July 2019.
-  <br><br>
-Our casino is still open 24 hours a day during our refurbishment</p>
     </div>
 
 
@@ -70,21 +70,6 @@ Our casino is still open 24 hours a day during our refurbishment</p>
         // TimeOut Effect
         setTimeout(function(){$(".class").addClass("anotherClass");}, 400);
 
-        // ---------
-        // Click Effect
-        $('.tf').click(function () {
-          $('.popup').fadeOut(400);
-          $('.pu1').fadeIn(400);
-        });
-
-        $('.colony').click(function () {
-          $('.popup').fadeOut(400);
-          $('.pu2').fadeIn(400);
-        });
-
-        $('.close').click(function () {
-          $('.popup').fadeOut(400);
-        });
 
       });
 
@@ -93,9 +78,9 @@ Our casino is still open 24 hours a day during our refurbishment</p>
       $(window).scroll(function() {    
         var scroll = $(window).scrollTop();
 
-        if (scroll > 100) {
-          $(".class").addClass("active");
-        };
+        // if (scroll > 100) {
+        //   $(".class").addClass("active");
+        // };
 
       });
 
@@ -108,25 +93,23 @@ Our casino is still open 24 hours a day during our refurbishment</p>
       function resizeDiv() {
       vph = $(window).height();
         $('body').css({'height': vph + 'px'});
-        $('.middle').css({'height': vph + 'px'});
-        $('.half').css({'height': vph + 'px'});
       };
 
       // ---------
       // If Scroll in to View
-      function isScrolledIntoView(elem) {
-          var docViewTop = $(window).scrollTop();
-          var docViewBottom = docViewTop + $(window).height();
-          var elemTop = $(elem).offset().top;
-          var elemBottom = elemTop + $(elem).height();
-          return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-      };
+      // function isScrolledIntoView(elem) {
+      //     var docViewTop = $(window).scrollTop();
+      //     var docViewBottom = docViewTop + $(window).height();
+      //     var elemTop = $(elem).offset().top;
+      //     var elemBottom = elemTop + $(elem).height();
+      //     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+      // };
 
-      $(window).scroll(function(){
-        if (isScrolledIntoView('.class') === true) {
-            $('.class').addClass('class');
-        };
-      });
+      // $(window).scroll(function(){
+      //   if (isScrolledIntoView('.class') === true) {
+      //       $('.class').addClass('class');
+      //   };
+      // });
 
       // ---------
       // Scroll to after Click
