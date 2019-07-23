@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>24 Mayfair</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Playfair+Display:400,700" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <script type="text/javascript" src="https://lib.formfor.site/1.0/ffs-valid.min.js"></script>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l6 offset-l3">
+          <img src="img/24.png" class="logo" />
+          <br>
+          <h1>Register your interest</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        
+       <form class="col s12 l6 offset-l3" method="POST" action="https://formfor.site/send/FgbiARj1B7Aya9miGUeLNL2BiV1xxZ" ContentType="application/json">
+         <div class="row">
+           <div class="input-field col m6 s12">
+             <input id="first_name" type="text" name="first_name" valid-required valid-msg-required="Please fill in your first name">
+             <label for="first_name">First Name</label>
+           </div>
+           <div class="input-field col m6 s12">
+             <input id="last_name" type="text" name="last_name" valid-required valid-msg-required="Please fill in your last name">
+             <label for="last_name">Last Name</label>
+           </div>
+         </div>
+         <div class="row">
+           <div class="input-field col s12">
+             <input id="email" type="email" name="email" valid-email valid-msg-required="Please fill in your e-mail">
+             <label for="email">Email</label>
+           </div>
+         </div>
+
+         <div class="row">
+           <div class="input-field col s12">
+            <input type="hidden" name="_success" value="http://form.24mayfair.com/thankyou.html" />
+             <input id="submit" type="submit" class="validate" value="Register Interest">
+           </div>
+         </div>
+       </form>
+
+      </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        resizeDiv();
+
+        // TimeOut Effect
+        setTimeout(function(){$(".class").addClass("anotherClass");}, 400);
+
+
+      });
+
+      // ---------
+      // Scroll Effect after X
+      $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+
+        // if (scroll > 100) {
+        //   $(".class").addClass("active");
+        // };
+
+      });
+
+      // ---------
+      // Resize Effect
+      window.onresize = function(event) {
+        resizeDiv();
+      }
+
+      function resizeDiv() {
+      vph = $(window).height();
+        $('body').css({'height': vph + 'px'});
+      };
+
+      // ---------
+      // If Scroll in to View
+      // function isScrolledIntoView(elem) {
+      //     var docViewTop = $(window).scrollTop();
+      //     var docViewBottom = docViewTop + $(window).height();
+      //     var elemTop = $(elem).offset().top;
+      //     var elemBottom = elemTop + $(elem).height();
+      //     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+      // };
+
+      // $(window).scroll(function(){
+      //   if (isScrolledIntoView('.class') === true) {
+      //       $('.class').addClass('class');
+      //   };
+      // });
+
+      // ---------
+      // Scroll to after Click
+      jQuery(document).ready(function($) {
+        $(".scroll").on('click',function () { 
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+        });
+      });
+    </script>
+  </body>
+</html>
